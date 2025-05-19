@@ -7,7 +7,7 @@ is_cn=$3
 function build_and_push_image() {
   docker buildx build --push \
     --file "$build_target" \
-    --platform linux/amd64 \
+    --platform linux/amd64,linux/arm64 \
     --tag "$image_name" \
     .
 }
